@@ -1,9 +1,9 @@
 let xAxisBall = 300;
 let yAxisBall = 200;
-let diameterBall = 15;
-let radiusBall = diameterBall / 2;
+let ballDiameter = 15;
+let ballRadius = ballDiameter / 2;
 
-let speedXAxisBall = 6;
+let xAxisBallSpeed = 6;
 let speedYAxisBall = 6;
 
 let xAxisRacket = 5;
@@ -26,19 +26,19 @@ function draw() {
 }
 
 function createBall() {
-  circle(xAxisBall,yAxisBall,diameterBall);
+  circle(xAxisBall,yAxisBall,ballDiameter);
 }
 
 function moveBall() {
-  xAxisBall += speedXAxisBall;
+  xAxisBall += xAxisBallSpeed;
   yAxisBall += speedYAxisBall;
 }
 
 function checkEdgeCollision() {
-  if (xAxisBall + radiusBall > width || xAxisBall - radiusBall < 0) {
-  speedXAxisBall *= -1;
+  if (xAxisBall + ballRadius > width || xAxisBall - ballRadius < 0) {
+  xAxisBallSpeed *= -1;
   }
-  if (yAxisBall + radiusBall > height || yAxisBall - radiusBall < 0) {
+  if (yAxisBall + ballRadius > height || yAxisBall - ballRadius < 0) {
   speedYAxisBall *= -1;
   }
 }
@@ -57,7 +57,7 @@ function moveRacket(){
 }
 
 function checkRacketCollision(){
-  if (xAxisBall - radiusBall < xAxisRacket + widthRacket && yAxisBall - radiusBall < yAxisRacket + heightRacket && yAxisBall + radiusBall > yAxisRacket) {
-    speedXAxisBall *= -1;
+  if (xAxisBall - ballRadius < xAxisRacket + widthRacket && yAxisBall - ballRadius < yAxisRacket + heightRacket && yAxisBall + ballRadius > yAxisRacket) {
+    xAxisBallSpeed *= -1;
   }
 }
