@@ -17,6 +17,7 @@ function draw() {
   moveBall();
   checkEdgeCollision();
   createRacket();
+  moveRacket();
 }
 
 function createBall() {
@@ -39,4 +40,13 @@ function checkEdgeCollision() {
 
 function createRacket(){
   rect(xAxisRacket, yAxisRacket, widthRacket, heightRacket);
+}
+
+function moveRacket(){
+  if (keyIsDown(UP_ARROW)){
+    yAxisRacket -= 10;
+  }
+  if (keyIsDown(DOWN_ARROW)){
+    yAxisRacket += 10;
+  }
 }
