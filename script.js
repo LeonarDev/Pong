@@ -25,3 +25,12 @@ function moveBall() {
   xAxisBall += speedXAxisBall;
   yAxisBall += speedYAxisBall;
 }
+
+function checkEdgeCollision() {
+  if (xAxisBall + radiusBall > width || xAxisBall - radiusBall < 0) {
+  speedXAxisBall *= -1;
+  }
+  if (yAxisBall + radiusBall > height || yAxisBall - radiusBall < 0) {
+  speedYAxisBall *= -1;
+  }
+}
