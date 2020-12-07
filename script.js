@@ -3,6 +3,10 @@ let yAxisBall = 200;
 let diameterBall = 15;
 let radiusBall = diameterBall / 2;
 
+let speedXAxisBall = 6;
+let speedYAxisBall = 6;
+
+
 function setup() {
   createCanvas(600, 400);
 }
@@ -10,4 +14,14 @@ function setup() {
 function draw() {
   background(40);
   createBall();
+  moveBall();
+}
+
+function createBall() {
+  circle(xAxisBall,yAxisBall,diameterBall);
+}
+
+function moveBall() {
+  xAxisBall += speedXAxisBall;
+  yAxisBall += speedYAxisBall;
 }
