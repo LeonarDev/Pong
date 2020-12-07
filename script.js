@@ -15,6 +15,8 @@ function draw() {
   background(40);
   createBall();
   moveBall();
+  checkEdgeCollision();
+  createRacket();
 }
 
 function createBall() {
@@ -33,4 +35,8 @@ function checkEdgeCollision() {
   if (yAxisBall + radiusBall > height || yAxisBall - radiusBall < 0) {
   speedYAxisBall *= -1;
   }
+}
+
+function createRacket(){
+  rect(xAxisRacket, yAxisRacket, widthRacket, heightRacket);
 }
